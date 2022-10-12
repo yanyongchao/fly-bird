@@ -20,8 +20,8 @@ export default defineConfig({
   menus: {
     '/components': [
       {
-        title: 'Foo',
-        children: ['Foo'],
+        title: '通用',
+        children: ['Icon'],
       },
     ],
   },

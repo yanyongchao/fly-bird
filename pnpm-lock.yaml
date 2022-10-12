@@ -9,6 +9,7 @@ specifiers:
   '@typescript-eslint/parser': ^4.8.2
   '@umijs/fabric': ^2.8.1
   '@umijs/test': ^3.0.5
+  classnames: ^2.3.2
   dumi: ^1.1.0
   eslint: ^7.14.0
   eslint-config-prettier: ^7.0.0
@@ -32,6 +33,7 @@ specifiers:
   yorkie: ^2.0.0
 
 dependencies:
+  classnames: 2.3.2
   react: 18.2.0
 
 devDependencies:
@@ -4138,7 +4140,6 @@ packages:
 
   /classnames/2.3.2:
     resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
-    dev: true
 
   /clean-regexp/1.0.0:
     resolution: {integrity: sha1-jffHquUf02h06PjQW5GAvBGj/tc=}
