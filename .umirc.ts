@@ -23,6 +23,10 @@ export default defineConfig({
         title: '通用',
         children: ['Icon'],
       },
+      {
+        title: '数据展示',
+        children: ['Affix'],
+      },
     ],
   },
 
