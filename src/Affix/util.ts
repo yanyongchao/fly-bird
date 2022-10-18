@@ -24,7 +24,6 @@ export function getFixedTop(
   targetRect: Rect,
   offsetTop: number | undefined,
 ) {
-  // console.log(targetRect.top, placeholderReact.top, offsetTop)
   if (offsetTop !== undefined && targetRect.top > placeholderReact.top - offsetTop) {
     return offsetTop + targetRect.top;
   }
@@ -36,7 +35,6 @@ export function getFixedBottom(
   targetRect: Rect,
   offsetBottom: number | undefined,
 ) {
-  console.log(targetRect.bottom, placeholderReact.bottom, offsetBottom);
   if (offsetBottom !== undefined && targetRect.bottom < placeholderReact.bottom + offsetBottom) {
     const targetBottomOffset = window.innerHeight - targetRect.bottom;
     return offsetBottom + targetBottomOffset;
@@ -58,7 +56,6 @@ export function getObserverEntities() {
 
 export function addObserveTarget(target: HTMLElement | Window | null, lazyUpdatePosition) {
   if (!target) return;
-
   let entities: ObserverEntities | undefined = observerEntities.find(
     (item) => item.target === target,
   );
@@ -68,11 +65,10 @@ export function addObserveTarget(target: HTMLElement | Window | null, lazyUpdate
       eventHandlers: {},
     };
     observerEntities.push(entities);
-
-    TRIGGER_EVENTS.forEach((eventName) => {
-      entities!.eventHandlers[eventName] = target.addEventListener(eventName, lazyUpdatePosition);
-    });
   }
+  TRIGGER_EVENTS.forEach((eventName) => {
+    entities!.eventHandlers[eventName] = target.addEventListener(eventName, lazyUpdatePosition);
+  });
 }
 
 export function removeObserveTarget(target, lazyUpdatePosition): void {
@@ -104,29 +100,4 @@ export function throttleByAnimationFrame(fn: (...args: any[]) => void) {
   (throttled as any).cancel = () => raf.cancel(requestId!);
 
   return throttled;
-}
-
-export function throttleByAnimationFrameDecorator() {
-  return function throttle(target: any, key: string, descriptor: any) {
-    const fn = descriptor.value;
-    let definingProperty = false;
-    return {
-      configurable: true,
-      get() {
-        if (definingProperty || this === target.prototype || this.hasOwnProperty(key)) {
-          return fn;
-        }
-
-        const boundFn = throttleByAnimationFrame(fn.bind(this));
-        definingProperty = true;
-        Object.defineProperty(this, key, {
-          value: boundFn,
-          configurable: true,
-          writable: true,
-        });
-        definingProperty = false;
-        return boundFn;
-      },
-    };
-  };
 }
