@@ -4,13 +4,13 @@ nav:
   path: /components
 ---
 
-## Icon
+## Alert
 
 Demo:
 
 ```tsx
 import React from 'react';
-import Demo from './demo/index';
+import Icon from './Alert';
 
-export default () => <Demo />;
+export default () => <Icon />;
 ```
