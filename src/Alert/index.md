@@ -10,7 +10,7 @@ Demo:
 
 ```tsx
 import React from 'react';
-import Icon from './Alert';
+import Demo1 from './demo/demo1';
 
-export default () => <Icon />;
+export default () => <Demo1 />;
 ```

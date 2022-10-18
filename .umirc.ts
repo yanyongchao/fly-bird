@@ -25,7 +25,7 @@ export default defineConfig({
       },
       {
         title: '数据展示',
-        children: ['Affix'],
+        children: ['Affix', 'Alert'],
       },
     ],
   },
