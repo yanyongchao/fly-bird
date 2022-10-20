@@ -4,7 +4,6 @@ module.exports = {
   plugins: ['stylelint-order'],
   rules: {
     'rule-empty-line-before': 'never',
-    'number-leading-zero': 'never',
     'function-comma-space-after': 'always',
     'function-url-quotes': 'never',
     'at-rule-no-unknown': [
