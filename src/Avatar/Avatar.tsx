@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import classNames from 'classnames';
 import { AvatarSize, AvatarShape } from './types';
 import { AvaratContext } from './context';
+import './style/index.less';
 
 export interface AvatarProps {
   shape?: AvatarShape;
@@ -40,6 +41,7 @@ const Avatar: React.FC<AvatarProps> = (props) => {
     [`avatar-sm`]: size === 'small',
   });
   const classString = classNames(
+    'avatar',
     sizeClass,
     {
       [`avatar-${shape}`]: !!shape,

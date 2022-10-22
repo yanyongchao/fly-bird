@@ -3,6 +3,7 @@ import toArray from 'rc-util/lib/Children/toArray';
 import { AvaratContext } from './context';
 import { cloneElement } from './utils';
 import { AvatarSize } from './types';
+import './style/group.less';
 
 export interface GroupProps {
   className?: string;
